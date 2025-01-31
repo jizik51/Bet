@@ -1,0 +1,63 @@
+.main {
+  background-color: orange;
+  color: rebeccapurple;
+  display: block;
+  align-content: center;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+.Table_Games {
+  width: 500px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.First_col {
+  vertical-align: middle;
+  padding: 19px;
+}
+
+
+.Game-FirstTeam-img {
+  width: 120px;
+  height: 122px;
+  margin-bottom: 40px;
+}
+
+/*
+.Team-First {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+.Table_Team {
+  display: flex;
+  text-align: center;
+} */
+
+/* .Game{
+    display: flex;
+    justify-content: center;
+}
+
+.Game-Time{
+    margin: 0px 80px 0px 80px;
+    align-content: center;
+}
+
+.Game-FirstTeam-img{
+    max-width: 120px;
+    height: 122px;
+}
+
+.Game-SecondTeam, .Game-FirstTeam{
+    text-align: center;
+} */

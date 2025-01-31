@@ -1,0 +1,15 @@
+{
+    "Game1": {
+        "FirstTeam": {
+            "img": "",
+            "name": ""
+        },
+        
+        "Time": "",
+
+        "SecondTeam": {
+            "img": "",
+            "name": ""
+        }
+    }
+}

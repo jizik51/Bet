@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "gy/m5OAnpAmEps64mOgyGmPRcm/YDxPcTEo0wUBIXesKSZ9MANBx0ytdjPAXrrjrR8YWFfd5gxe15lSUNLBNzQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\troll\\source\\repos\\Bet\\Bet.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\troll\\.nuget\\packages\\htmlagilitypack\\1.11.72\\htmlagilitypack.1.11.72.nupkg.sha512",
+    "C:\\Users\\troll\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\troll\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\troll\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "C:\\Users\\troll\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\troll\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\troll\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\troll\\.nuget\\packages\\puppeteersharp\\20.0.5\\puppeteersharp.20.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,50 @@
+/* _content/Bet/Pages/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-e1d45j7njo] {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+  }
+  
+  a[b-e1d45j7njo] {
+    color: #0077cc;
+  }
+  
+  .btn-primary[b-e1d45j7njo] {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+  }
+  
+  .nav-pills .nav-link.active[b-e1d45j7njo], .nav-pills .show > .nav-link[b-e1d45j7njo] {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+  }
+  
+  .border-top[b-e1d45j7njo] {
+    border-top: 1px solid #e5e5e5;
+  }
+  .border-bottom[b-e1d45j7njo] {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .box-shadow[b-e1d45j7njo] {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  }
+  
+  button.accept-policy[b-e1d45j7njo] {
+    font-size: 1rem;
+    line-height: inherit;
+  }
+  
+  .footer[b-e1d45j7njo] {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+  }
+  

@@ -1,0 +1,22 @@
+.Game {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.Card {
+  margin: 0px 200px 0px 200px;
+}
+.Streak_Container {
+  margin-top: 50px;
+}
+.Stat {
+  display: flex;
+}
+.Stat__Table {
+  margin-right: 25px;
+}
+.Procent {
+  margin-left: 25px;
+  /* margin-top: 26px; */
+}
