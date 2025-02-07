@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Globalization;
 using System.Text.Json;
+using Bet.Models;
 
 namespace Bet
 {
@@ -48,7 +49,7 @@ namespace Bet
                 "mem"
             };
 
-        public async Task<List<GameInfo>> GetGameList2()
+        public async Task<List<Games>> GetGameList()
         {
             string content = string.Empty;
             using (HttpClient client = new HttpClient())
@@ -80,7 +81,7 @@ namespace Bet
                 ?.ToList();
 
             // var listGames = new List<List<string>>();
-            List<GameInfo> listGames = new List<GameInfo>();
+            List<Games> listGames = new List<Games>();
 
             try
             {
@@ -122,11 +123,11 @@ namespace Bet
                     string teamNameFirst = teamName[i].Replace(" ", "");
                     string teamNameSecond = teamName[i + 1].Replace(" ", "");
 
-                    var teamFirst = (int)Enum.Parse<Games>(teamNameFirst);
-                    var teamSecond = (int)Enum.Parse<Games>(teamNameSecond);
+                    var teamFirst = (int)Enum.Parse<GamesEnum>(teamNameFirst);
+                    var teamSecond = (int)Enum.Parse<GamesEnum>(teamNameSecond);
 
                     listGames.Add(
-                        new GameInfo(
+                        new Games(
                             teamNameFirst,
                             teamNameSecond,
                             null,
@@ -145,16 +146,14 @@ namespace Bet
                     }
                 }
 
-                foreach (var item in listGames)
-                {
-                    string json = JsonSerializer.Serialize(item);
-                    Console.WriteLine($"{json}");
-                }
+                WriteInJson(listGames);
             }
             catch (System.Exception ex)
             {
                 Console.WriteLine($"{ex.Message}");
             }
+
+            //Send
             return listGames;
         }
 
@@ -170,7 +169,7 @@ namespace Bet
                     CultureInfo.CreateSpecificCulture("en-US")
                 );
 
-                res = dt.Date.ToString("dddd, MMMM dd, yyyy ", new CultureInfo("en-US"));
+                res = dt.Date.ToString("dddd, MMMM d, yyyy ", new CultureInfo("en-US"));
             }
             catch (System.Exception ex)
             {
@@ -182,33 +181,59 @@ namespace Bet
 
             return res;
         }
-    }
 
-    public class GameInfo
-    {
-        public string? TeamFirst { get; private set; }
-        public string? TeamFirstLogoSrc { get; private set; }
-        public string? TeamSecond { get; private set; }
-        public string? TeamSecondLogoSrc { get; private set; }
-        public string? Time { get; set; }
-
-        public GameInfo(
-            string teamFirst,
-            string teamSecond,
-            string? time,
-            string? teamFirstLogoSrc,
-            string? teamSecondLogoSrc
-        )
+        private void WriteInJson(List<Games> listGames)
         {
-            TeamFirst = teamFirst;
-            TeamSecond = teamSecond;
-            Time = time;
-            TeamFirstLogoSrc = teamFirstLogoSrc;
-            TeamSecondLogoSrc = teamSecondLogoSrc;
+            int game = 0;
+
+            System.IO.File.WriteAllText("C:/Users/troll/source/repos/Bet/wwwroot/game.json", "");
+            foreach (var item in listGames)
+            {
+                string json = JsonSerializer.Serialize<Games>(item);
+                string newJson = $"\"game{game}\" : {json},";
+                game++;
+                System.IO.File.AppendAllText(
+                    "C:/Users/troll/source/repos/Bet/wwwroot/game.json",
+                    newJson
+                );
+            }
+            string js = System.IO.File.ReadAllText(
+                "C:/Users/troll/source/repos/Bet/wwwroot/game.json"
+            );
+
+            js = js.Insert(0, "{");
+            js = js.Remove(js.Length - 1, 1);
+            js += "}";
+
+            System.IO.File.WriteAllText("C:/Users/troll/source/repos/Bet/wwwroot/game.json", js);
         }
     }
 
-    enum Games
+    // public class GameInfo
+    // {
+    //     public string? TeamFirst { get; private set; }
+    //     public string? TeamFirstLogoSrc { get; private set; }
+    //     public string? TeamSecond { get; private set; }
+    //     public string? TeamSecondLogoSrc { get; private set; }
+    //     public string? Time { get; set; }
+
+    //     public GameInfo(
+    //         string teamFirst,
+    //         string teamSecond,
+    //         string? time,
+    //         string? teamFirstLogoSrc,
+    //         string? teamSecondLogoSrc
+    //     )
+    //     {
+    //         TeamFirst = teamFirst;
+    //         TeamSecond = teamSecond;
+    //         Time = time;
+    //         TeamFirstLogoSrc = teamFirstLogoSrc;
+    //         TeamSecondLogoSrc = teamSecondLogoSrc;
+    //     }
+    // }
+
+    enum GamesEnum
     {
         Brooklyn = 0,
         LA = 1,

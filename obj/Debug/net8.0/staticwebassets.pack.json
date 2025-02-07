@@ -1,31 +1,31 @@
 {
   "Files": [
     {
-      "Id": "c:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\css\\Stat.css",
+      "Id": "C:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\css\\Stat.css",
       "PackagePath": "staticwebassets\\css\\Stat.css"
     },
     {
-      "Id": "c:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\css\\mystyle.css",
+      "Id": "C:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\css\\mystyle.css",
       "PackagePath": "staticwebassets\\css\\mystyle.css"
     },
     {
-      "Id": "c:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "c:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\ex.json",
-      "PackagePath": "staticwebassets\\ex.json"
-    },
-    {
-      "Id": "c:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\g.html",
+      "Id": "C:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\g.html",
       "PackagePath": "staticwebassets\\g.html"
     },
     {
-      "Id": "c:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\images\\team1.svg",
+      "Id": "C:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\game.json",
+      "PackagePath": "staticwebassets\\game.json"
+    },
+    {
+      "Id": "C:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\images\\team1.svg",
       "PackagePath": "staticwebassets\\images\\team1.svg"
     },
     {
-      "Id": "c:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\images\\team2.svg",
+      "Id": "C:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\images\\team2.svg",
       "PackagePath": "staticwebassets\\images\\team2.svg"
     },
     {

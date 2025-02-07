@@ -1,0 +1,55 @@
+@model List<Bet.Models.Games>
+
+@{
+    ViewData["Title"] = "Home Page";
+    string head = "Привет";
+}
+<h1>Hello basket bet contora @head</h1>
+
+<table class="Table_Games">
+    <colgroup class="Table_Games-colgroup">
+        <col class="Table_Column">
+        <col class="Table_Column">
+        <col class="Table_Column">
+    </colgroup>
+
+    <tbody class="Table_Games-body">
+
+        @foreach (var game in Model)
+        {
+            <tr class="Table_row">
+
+                <td class="First_col">
+                    <a asp-page="/Privacy" class="Page_Link">
+                        <div class="Team-First">
+                            <div class="Table_Team">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/scoreboard/@(game.TeamFirstLogoSrc).png&w=60&h=60&scale=crop&cquality=200&location=origin"
+                                    alt="Logo" class="Game-FirstTeam-img" />
+                                <p class="Team-Name"> @game.TeamFirst </p>
+                            </div>
+                        </div>
+                    </a>
+                </td>
+
+
+                <td class="Second_col">
+                    <span>@game.Time</span>
+                </td>
+
+                <td class="Third_col">
+                    <a asp-page="/Privacy" class="Page_Link">
+                        <div class="Team-Second">
+                            <div class="Table_Team">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/scoreboard/@(game.TeamSecondLogoSrc).png&w=60&h=60&scale=crop&cquality=200&location=origin"
+                                    alt="Logo" class="Game-FirstTeam-img" />
+                                <p class="Team-Name"> @game.TeamSecond </p>
+                            </div>
+                        </div>
+                    </a>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>

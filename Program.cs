@@ -1,20 +1,26 @@
-using Bet;
+using System;
 
-var builder = WebApplication.CreateBuilder(args);
+namespace Bet;
 
-builder.Services.AddRazorPages();
-builder.Services.AddSingleton<HomeController>();
-builder.Services.AddSingleton<FindGamesController>();
+// builder.Services.AddRazorPages();
 
-var app = builder.Build();
+// app.UseHttpsRedirection();
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
+// app.MapRazorPages();
+// app.MapControllers();
+// app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.UseRouting();
+class Program
+{
+    public static void Main()
+    {
+        CreateHostBuilder().Build().Run();
+    }
 
-app.UseAuthorization();
-
-app.MapRazorPages();
-
-app.Run();
+    public static IHostBuilder CreateHostBuilder() =>
+        Host.CreateDefaultBuilder()
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
+}
