@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\images\\team2.svg"
     },
     {
+      "Id": "C:\\Users\\troll\\source\\repos\\Bet\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Bet.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

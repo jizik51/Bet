@@ -1,0 +1,60 @@
+@model List<Bet.Models.BetViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead class="table-header">
+        <tr class="header-row">
+            <th class="header-cell">
+                First Team
+            </th>
+            <th class="header-cell">
+                Second Team
+            </th>
+            <th class="header-cell">
+                Who win
+            </th>
+            <th class="header-cell">
+                Game Result
+            </th>
+            <th class="header-cell">
+                Coefficent
+            </th>
+        </tr>
+    </thead>
+
+    <tbody class="table-body">
+        @foreach (var item in Model)
+        {
+            <tr class="body-row">
+                <td class="body-cell">
+                    @item.FirstTeame
+                </td>
+                <td class="body-cell">
+                    @item.SecondTeam
+                </td>
+                <td class="body-cell">
+                    @item.whoWin
+                </td>
+                <td class="body-cell">
+                    @item.gameResult
+                </td>
+                <td class="body-cell">
+                    @item.coefficent
+                </td>
+                <td class="body-cell actions">
+                    <a class="action-link" asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                    <a class="action-link" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
