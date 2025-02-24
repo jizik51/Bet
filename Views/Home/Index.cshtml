@@ -1,55 +1,84 @@
-@model List<Bet.Models.Games>
+@* @model List<Bet.Models.Games> *@
+@model IEnumerable<Game>
 
 @{
     ViewData["Title"] = "Home Page";
     string head = "Привет";
 }
 <h1>Hello basket bet contora @head</h1>
+<div class="wrapper">
+    <div class="Index">
 
-<table class="Table_Games">
-    <colgroup class="Table_Games-colgroup">
-        <col class="Table_Column">
-        <col class="Table_Column">
-        <col class="Table_Column">
-    </colgroup>
+        <table class="Table_Games">
+            <colgroup class="Table_Games-colgroup">
+                <col class="Table_Column">
+                <col class="Table_Column">
+                <col class="Table_Column">
+                <col class="Table_Column">
+            </colgroup>
+            <tbody class="Table_Games-body">
 
-    <tbody class="Table_Games-body">
+                @foreach (var game in Model)
+                {
+                    <tr class="Table_row">
 
-        @foreach (var game in Model)
-        {
-            <tr class="Table_row">
+                        <td class="First_col">
+                            <a asp-route-id="@game.Id" asp-controller="Home" asp-action="Privacy" class="Page_Link">
+                                <div class="Team-First">
+                                    <div class="Table_Team">
+                                        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/scoreboard/@(game.Home.Alias).png&w=60&h=60&scale=crop&cquality=200&location=origin"
+                                            alt="Logo" class="Game-FirstTeam-img" />
+                                        <p class="Team-Name"> @game.Home.Name </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
 
-                <td class="First_col">
-                    <a asp-page="/Privacy" class="Page_Link">
-                        <div class="Team-First">
-                            <div class="Table_Team">
-                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/scoreboard/@(game.TeamFirstLogoSrc).png&w=60&h=60&scale=crop&cquality=200&location=origin"
-                                    alt="Logo" class="Game-FirstTeam-img" />
-                                <p class="Team-Name"> @game.TeamFirst </p>
+
+                        <td class="Second_col">
+                            @* <span>@game.Time</span> *@
+                        </td>
+
+                        <td class="Third_col">
+                            <a asp-route-id="@game.Id" asp-controller="Home" asp-action="Privacy" class="Page_Link">
+                                <div class="Team-Second">
+                                    <div class="Table_Team">
+                                        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/scoreboard/@(game.Away.Alias).png&w=60&h=60&scale=crop&cquality=200&location=origin"
+                                            alt="Logo" class="Game-FirstTeam-img" />
+                                        <p class="Team-Name"> @game.Away.Name </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </td>
+
+                        <td class="Fourth_col">
+                            <div class="Btn__container">
+                                <button data-id="@game.FirstId" asp-route-id="@game.Id" type="button" class="First_btn" onclick="setClicked(this)">
+                                    <div class="btn-div__text">
+                                        <p class="btn_text-first">П1</p>
+                                    </div>
+                                </button>
+                                <button data-id="@game.SecondId" asp-route-id="@game.Id" type="button" class="Second_btn" onclick="setClicked(this)">
+                                    <div class="btn-div__text">
+                                        <p class="btn_text-second">П2</p>
+                                    </div>
+                                </button>
                             </div>
-                        </div>
-                    </a>
-                </td>
+                        </td>
+                    </tr>
+                }
 
+            </tbody>
+        </table>
+    </div>
 
-                <td class="Second_col">
-                    <span>@game.Time</span>
-                </td>
-
-                <td class="Third_col">
-                    <a asp-page="/Privacy" class="Page_Link">
-                        <div class="Team-Second">
-                            <div class="Table_Team">
-                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/scoreboard/@(game.TeamSecondLogoSrc).png&w=60&h=60&scale=crop&cquality=200&location=origin"
-                                    alt="Logo" class="Game-FirstTeam-img" />
-                                <p class="Team-Name"> @game.TeamSecond </p>
-                            </div>
-                        </div>
-                    </a>
-                </td>
-
-            </tr>
-        }
-
-    </tbody>
-</table>
+    <aside class="aside__Bet">
+        <form id="myForm" method="post" class="Button__Send-Bet">
+            <button type="submit" class="Result__btn" onclick="setClickedBet(this)">
+                <div class="Result__btn-container">
+                    <span class="Result__btn-text">Добавить</span>
+                </div>
+            </button>
+        </form>
+    </aside>
+</div>

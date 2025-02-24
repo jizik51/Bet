@@ -1,51 +1,50 @@
-
-
+@model StatViewModel
 
 <div class="Game">
 
     <div class="Card">
-        <div class="Team__Name">Name</div>
+        <div class="Team__Name">@Model.Game.TeamFirst</div>
         <div class="Logo">
-            <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/scoreboard/lal.png&w=60&h=60&scale=crop&cquality=200&location=origin"
+            <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/scoreboard/@(Model.Game.TeamFirstLogoSrc).png&w=60&h=60&scale=crop&cquality=200&location=origin"
                 alt="Logo" class="Card-Img__logo">
         </div>
         <div class="Streak_Container">
-            <p class="Streak">Str</p>
+            <p class="Streak">Streak - @Model.Stats[0].streak</p>
         </div>
         <div class="Stat">
             <div class="Stat__Table">
-                <p class="Last__Five">3-2</p>
-                <p class="Last_Teen">8-2</p>
-                <p class="All__Games">26-19</p>
+                <p class="Last__Five">@Model.Stats[0].lastFive</p>
+                <p class="Last_Teen">@Model.Stats[0].lastTeen</p>
+                <p class="All__Games">@Model.Stats[0].wins - @Model.Stats[0].loses</p>
             </div>
             <div class="Procent">
-                <p class="Procent-Last__Five">60%</p>
-                <p class="Procent-Last_Teen">80%</p>
-                <p class="Procent-All__Games">57%</p>
+                <p class="Procent-Last__Five">@Model.Stats[0].lastFiveProcent</p>
+                <p class="Procent-Last_Teen">@Model.Stats[0 ].lastTeenProcent</p>
+                <p class="Procent-All__Games">@Model.Stats[0].allWinRate</p>
             </div>
         </div>
     </div>
 
     <div class="Card">
-        <div class="Team__Name">Name</div>
+        <div class="Team__Name">@Model.Game.TeamSecond</div>
         <div class="Logo">
-            <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/scoreboard/gs.png&w=60&h=60&scale=crop&cquality=200&location=origin"
+            <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/scoreboard/@(Model.Game.TeamSecondLogoSrc).png&w=60&h=60&scale=crop&cquality=200&location=origin"
                 alt="Logo" class="Card-Img__logo">
         </div>
         <div class="Streak_Container">
-            <p class="Streak">Str</p>
+            <p class="Streak">Streak - @Model.Stats[1].streak</p>
         </div>
         <div class="Stat">
             <div class="Stat__Table">
-                <p class="Last__Five">3-2</p>
-                <p class="Last_Teen">8-2</p>
-                <p class="All__Games">26-19</p>
+                <p class="Last__Five">@Model.Stats[1].lastFive</p>
+                <p class="Last_Teen">@Model.Stats[1].lastTeen</p>
+                <p class="All__Games">@Model.Stats[1].wins - @Model.Stats[1].loses</p>
             </div>
 
             <div class="Procent">
-                <p class="Procent-Last__Five">60%</p>
-                <p class="Procent-Last_Teen">80%</p>
-                <p class="Procent-All__Games">57%</p>
+                <p class="Procent-Last__Five">@Model.Stats[1].lastFiveProcent</p>
+                <p class="Procent-Last_Teen">@Model.Stats[1].lastTeenProcent</p>
+                <p class="Procent-All__Games">@Model.Stats[1].allWinRate</p>
             </div>
         </div>
     </div>

@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Bet.Controllers;
+using Services;
+using Microsoft.EntityFrameworkCore;
+using MvcBet.Data;
 
 namespace Bet;
 
@@ -21,8 +24,15 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllersWithViews();
-        services.AddSingleton<HomeController>();
-        services.AddSingleton<FindGamesController>();
+        services.AddScoped<HomeController>();
+        services.AddScoped<BetsController>();
+        services.AddScoped<FindGamesController>();
+        services.AddSingleton<StatsServices>();
+        services.AddDbContext<MvcBetContext>(options =>
+        {
+            var str = Configuration.GetConnectionString("DefaultConnection");
+            options.UseNpgsql(str);
+        });
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
